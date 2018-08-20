@@ -1,0 +1,37 @@
+### Headers settings
+company: None
+
+### Xcode project settings
+project_name: ExchangeRates
+xcodeproj_path: ExchangeRates.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: ExchangeRates
+
+# The file path for new modules
+project_file_path: ExchangeRates/Screens
+
+# The Xcode group path to new modules
+project_group_path: ExchangeRates/Screens
+
+### Tests generation settings section
+# The tests target name
+test_target: ExchangeRatesTests
+
+# The file path for new tests
+test_file_path: ExchangeRatesTests/Tests/Screens
+
+# The Xcode group path to new tests
+test_group_path: ExchangeRatesTests/Tests/Screens
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Catalogs
+catalogs:
+- 'https://github.com/ismetanin/generamba-modules'
+
+### Templates
+templates:
+- {name: surf_mvp_module}

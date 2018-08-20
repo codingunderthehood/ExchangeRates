@@ -1,0 +1,958 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040E4EC7124D0849FB9085BF /* RatesModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577A7B8B9543F7CE7D9AFF30 /* RatesModuleOutput.swift */; };
+		19E379CE42D0ECA84E0F36FB /* RatesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F395CF72BA37B1B6D9B7929 /* RatesModuleInput.swift */; };
+		1A224E32814304CADCB92DED /* Pods_ExchangeRates_ExchangeRatesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FD07A6FC5AE56EEE5DDD61 /* Pods_ExchangeRates_ExchangeRatesTests.framework */; };
+		2C993D0AC2925954DC8DBEE1 /* RatesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AD9500E6543A00E1FF889 /* RatesViewOutput.swift */; };
+		3B7FEB634723A965B3699BE5 /* RatesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BE8BA1A3550B98B664EDC /* RatesRouterTests.swift */; };
+		3F537FE6DAE306B7F139EA80 /* RatesRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964AF7D6BF79B196EDD966F /* RatesRouterInput.swift */; };
+		45BF87A12D0A90B2050511D8 /* RatesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BE1744B0167A2F4F25A99 /* RatesPresenter.swift */; };
+		46750BA09D96155A8292E148 /* Pods_ExchangeRates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C963F5740C3864092526ECDC /* Pods_ExchangeRates.framework */; };
+		4F1150270AB6451756611766 /* RatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38504B4FE5EA08A78649269C /* RatesRouter.swift */; };
+		55980249D691D7C2C648B0F8 /* RatesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D916965924A215CFE59DF0 /* RatesPresenterTests.swift */; };
+		6CE24FA2BB72C2D4703CD569 /* RatesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205369AA91F08BFEFACE65EA /* RatesViewInput.swift */; };
+		8B04B777212B155A00CDD88A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B776212B155A00CDD88A /* .gitignore */; };
+		8B04B799212B155B00CDD88A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B798212B155B00CDD88A /* LaunchScreen.xib */; };
+		8B04B79B212B155B00CDD88A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B79A212B155B00CDD88A /* Assets.xcassets */; };
+		8B04B79D212B155B00CDD88A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04B79C212B155B00CDD88A /* AppDelegate.swift */; };
+		8B04B7A1212B155B00CDD88A /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B7A0212B155B00CDD88A /* Gemfile */; };
+		8B04B7A5212B155B00CDD88A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B7A4212B155B00CDD88A /* .swiftlint.yml */; };
+		8B04B7A9212B155B00CDD88A /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04B7A8212B155B00CDD88A /* ModuleTransitionable.swift */; };
+		8B04B7B4212B155B00CDD88A /* ExchangeRatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04B7B3212B155B00CDD88A /* ExchangeRatesTests.swift */; };
+		A28387ADAD1C85384E0EB139 /* RatesModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292BB9654440330E71A4FE /* RatesModuleConfiguratorTests.swift */; };
+		A6E22F00A358AE8919EEB805 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57888BDB3199EB363104E06 /* RatesViewController.swift */; };
+		CEE1055140CA14F74BCC18AE /* RatesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B1669F96F919D924C1AE3 /* RatesViewTests.swift */; };
+		D5412B7A9B18791DF313763A /* RatesModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F64D8B2331D2D781973550 /* RatesModuleConfigurator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B04B7B0212B155B00CDD88A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B04B766212B155A00CDD88A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B04B76E212B155A00CDD88A;
+			remoteInfo = ExchangeRates;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034BE8BA1A3550B98B664EDC /* RatesRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesRouterTests.swift; sourceTree = "<group>"; };
+		07F4B99BE0448CBFA69F910A /* Pods-ExchangeRates-ExchangeRatesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRates-ExchangeRatesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRates-ExchangeRatesTests/Pods-ExchangeRates-ExchangeRatesTests.release.xcconfig"; sourceTree = "<group>"; };
+		205369AA91F08BFEFACE65EA /* RatesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesViewInput.swift; sourceTree = "<group>"; };
+		2964AF7D6BF79B196EDD966F /* RatesRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesRouterInput.swift; sourceTree = "<group>"; };
+		2F395CF72BA37B1B6D9B7929 /* RatesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesModuleInput.swift; sourceTree = "<group>"; };
+		38504B4FE5EA08A78649269C /* RatesRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
+		577A7B8B9543F7CE7D9AFF30 /* RatesModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesModuleOutput.swift; sourceTree = "<group>"; };
+		6D5314B7AECCC37C67880087 /* Pods-ExchangeRates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates.debug.xcconfig"; sourceTree = "<group>"; };
+		802B1669F96F919D924C1AE3 /* RatesViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesViewTests.swift; sourceTree = "<group>"; };
+		8B04B76F212B155A00CDD88A /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B04B775212B155A00CDD88A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		8B04B776212B155A00CDD88A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		8B04B779212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B77B212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B780212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B782212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B784212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B786212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B789212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B78B212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B78E212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B790212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B792212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B794212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B796212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B798212B155B00CDD88A /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		8B04B79A212B155B00CDD88A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B04B79C212B155B00CDD88A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B04B79E212B155B00CDD88A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = ../Makefile; sourceTree = "<group>"; };
+		8B04B7A0212B155B00CDD88A /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		8B04B7A4212B155B00CDD88A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
+		8B04B7A6212B155B00CDD88A /* Rambafile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rambafile; path = ../Rambafile; sourceTree = "<group>"; };
+		8B04B7A7212B155B00CDD88A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8B04B7A8212B155B00CDD88A /* ModuleTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
+		8B04B7AA212B155B00CDD88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B04B7AF212B155B00CDD88A /* ExchangeRatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B04B7B3212B155B00CDD88A /* ExchangeRatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesTests.swift; sourceTree = "<group>"; };
+		8B04B7B6212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B7B7212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8B04B7B8212B155B00CDD88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B292BB9654440330E71A4FE /* RatesModuleConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesModuleConfiguratorTests.swift; sourceTree = "<group>"; };
+		8F2BE1744B0167A2F4F25A99 /* RatesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesPresenter.swift; sourceTree = "<group>"; };
+		A57888BDB3199EB363104E06 /* RatesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
+		C1E75C231BB9E1D544E7C56B /* Pods-ExchangeRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRates.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates.release.xcconfig"; sourceTree = "<group>"; };
+		C963F5740C3864092526ECDC /* Pods_ExchangeRates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeRates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9FD07A6FC5AE56EEE5DDD61 /* Pods_ExchangeRates_ExchangeRatesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeRates_ExchangeRatesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8D018405F768670B853DA7 /* Pods-ExchangeRates-ExchangeRatesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRates-ExchangeRatesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRates-ExchangeRatesTests/Pods-ExchangeRates-ExchangeRatesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2D916965924A215CFE59DF0 /* RatesPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesPresenterTests.swift; sourceTree = "<group>"; };
+		F2F64D8B2331D2D781973550 /* RatesModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesModuleConfigurator.swift; sourceTree = "<group>"; };
+		FB2AD9500E6543A00E1FF889 /* RatesViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesViewOutput.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B04B76B212B155A00CDD88A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46750BA09D96155A8292E148 /* Pods_ExchangeRates.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04B7AC212B155B00CDD88A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A224E32814304CADCB92DED /* Pods_ExchangeRates_ExchangeRatesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07A2863D0DF0D1C987089E8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D5314B7AECCC37C67880087 /* Pods-ExchangeRates.debug.xcconfig */,
+				C1E75C231BB9E1D544E7C56B /* Pods-ExchangeRates.release.xcconfig */,
+				DB8D018405F768670B853DA7 /* Pods-ExchangeRates-ExchangeRatesTests.debug.xcconfig */,
+				07F4B99BE0448CBFA69F910A /* Pods-ExchangeRates-ExchangeRatesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		25479274F4CC2B870F3D3A62 /* Rates */ = {
+			isa = PBXGroup;
+			children = (
+				847082C4C541DE6973D785C5 /* Configurator */,
+				E983D9B450C464D344F51F3F /* Router */,
+				47E19D3565FB9C2B97209A58 /* Presenter */,
+				AAA1FF9B67627C5496793622 /* View */,
+			);
+			path = Rates;
+			sourceTree = "<group>";
+		};
+		3CBCF7F8B7E6ECBD8BB5BAAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C963F5740C3864092526ECDC /* Pods_ExchangeRates.framework */,
+				D9FD07A6FC5AE56EEE5DDD61 /* Pods_ExchangeRates_ExchangeRatesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47E19D3565FB9C2B97209A58 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E2D916965924A215CFE59DF0 /* RatesPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7C33D3403C593EDA26E588D1 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				F2F64D8B2331D2D781973550 /* RatesModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		847082C4C541DE6973D785C5 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				8B292BB9654440330E71A4FE /* RatesModuleConfiguratorTests.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		8B04B765212B155A00CDD88A = {
+			isa = PBXGroup;
+			children = (
+				8B04B771212B155A00CDD88A /* ExchangeRates */,
+				8B04B7B2212B155B00CDD88A /* ExchangeRatesTests */,
+				3CBCF7F8B7E6ECBD8BB5BAAA /* Frameworks */,
+				07A2863D0DF0D1C987089E8A /* Pods */,
+				8B04B770212B155A00CDD88A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B04B770212B155A00CDD88A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B76F212B155A00CDD88A /* ExchangeRates.app */,
+				8B04B7AF212B155B00CDD88A /* ExchangeRatesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B04B771212B155A00CDD88A /* ExchangeRates */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B797212B155B00CDD88A /* Application */,
+				8B04B78C212B155B00CDD88A /* Library */,
+				8B04B787212B155B00CDD88A /* Models */,
+				8B04B77E212B155B00CDD88A /* Resources */,
+				8B04B77C212B155B00CDD88A /* Screens */,
+				8B04B77A212B155B00CDD88A /* Services */,
+				8B04B778212B155B00CDD88A /* Third Party */,
+				8B04B772212B155A00CDD88A /* Non-iOS Resources */,
+				8B04B7AA212B155B00CDD88A /* Info.plist */,
+			);
+			path = ExchangeRates;
+			sourceTree = "<group>";
+		};
+		8B04B772212B155A00CDD88A /* Non-iOS Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B775212B155A00CDD88A /* Podfile */,
+				8B04B776212B155A00CDD88A /* .gitignore */,
+				8B04B79E212B155B00CDD88A /* Makefile */,
+				8B04B7A0212B155B00CDD88A /* Gemfile */,
+				8B04B7A4212B155B00CDD88A /* .swiftlint.yml */,
+				8B04B7A6212B155B00CDD88A /* Rambafile */,
+				8B04B7A7212B155B00CDD88A /* README.md */,
+			);
+			name = "Non-iOS Resources";
+			sourceTree = "<group>";
+		};
+		8B04B778212B155B00CDD88A /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B779212B155B00CDD88A /* .gitkeep */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		8B04B77A212B155B00CDD88A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B77B212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B04B77C212B155B00CDD88A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EA30526DBCA61A7412FB55A4 /* Rates */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8B04B77E212B155B00CDD88A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B783212B155B00CDD88A /* Constants */,
+				8B04B785212B155B00CDD88A /* Fonts */,
+				8B04B781212B155B00CDD88A /* Images */,
+				8B04B77F212B155B00CDD88A /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B04B77F212B155B00CDD88A /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B780212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		8B04B781212B155B00CDD88A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B782212B155B00CDD88A /* .gitkeep */,
+				8B04B79A212B155B00CDD88A /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8B04B783212B155B00CDD88A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B784212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8B04B785212B155B00CDD88A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B786212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8B04B787212B155B00CDD88A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B788212B155B00CDD88A /* Entity */,
+				8B04B78A212B155B00CDD88A /* Entry */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B04B788212B155B00CDD88A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B789212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8B04B78A212B155B00CDD88A /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B78B212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		8B04B78C212B155B00CDD88A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B78D212B155B00CDD88A /* Base Classes */,
+				8B04B791212B155B00CDD88A /* Extensions */,
+				8B04B795212B155B00CDD88A /* Protocols */,
+				8B04B793212B155B00CDD88A /* Reusable Layer */,
+				8B04B78F212B155B00CDD88A /* Utils */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8B04B78D212B155B00CDD88A /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B78E212B155B00CDD88A /* .gitkeep */,
+			);
+			path = "Base Classes";
+			sourceTree = "<group>";
+		};
+		8B04B78F212B155B00CDD88A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B790212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8B04B791212B155B00CDD88A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B792212B155B00CDD88A /* .gitkeep */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B04B793212B155B00CDD88A /* Reusable Layer */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B794212B155B00CDD88A /* .gitkeep */,
+			);
+			path = "Reusable Layer";
+			sourceTree = "<group>";
+		};
+		8B04B795212B155B00CDD88A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B796212B155B00CDD88A /* .gitkeep */,
+				8B04B7A8212B155B00CDD88A /* ModuleTransitionable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8B04B797212B155B00CDD88A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B79C212B155B00CDD88A /* AppDelegate.swift */,
+				8B04B798212B155B00CDD88A /* LaunchScreen.xib */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8B04B7B2212B155B00CDD88A /* ExchangeRatesTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B7B5212B155B00CDD88A /* Tests */,
+				8B04B7B7212B155B00CDD88A /* .gitkeep */,
+				8B04B7B3212B155B00CDD88A /* ExchangeRatesTests.swift */,
+				8B04B7B8212B155B00CDD88A /* Info.plist */,
+			);
+			path = ExchangeRatesTests;
+			sourceTree = "<group>";
+		};
+		8B04B7B5212B155B00CDD88A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8B04B7B6212B155B00CDD88A /* .gitkeep */,
+				F199B532FB3B8EAA8C8F43A2 /* Screens */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AAA1FF9B67627C5496793622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				802B1669F96F919D924C1AE3 /* RatesViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4D44F621BEF5F737A6D2789 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BE1744B0167A2F4F25A99 /* RatesPresenter.swift */,
+				2F395CF72BA37B1B6D9B7929 /* RatesModuleInput.swift */,
+				577A7B8B9543F7CE7D9AFF30 /* RatesModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B9EBB2ECEDB0DF552ECEF2E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A57888BDB3199EB363104E06 /* RatesViewController.swift */,
+				205369AA91F08BFEFACE65EA /* RatesViewInput.swift */,
+				FB2AD9500E6543A00E1FF889 /* RatesViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E983D9B450C464D344F51F3F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				034BE8BA1A3550B98B664EDC /* RatesRouterTests.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		EA30526DBCA61A7412FB55A4 /* Rates */ = {
+			isa = PBXGroup;
+			children = (
+				7C33D3403C593EDA26E588D1 /* Configurator */,
+				ED54F58C82D167F279EC8D5C /* Router */,
+				B4D44F621BEF5F737A6D2789 /* Presenter */,
+				B9EBB2ECEDB0DF552ECEF2E5 /* View */,
+			);
+			path = Rates;
+			sourceTree = "<group>";
+		};
+		ED54F58C82D167F279EC8D5C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				38504B4FE5EA08A78649269C /* RatesRouter.swift */,
+				2964AF7D6BF79B196EDD966F /* RatesRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F199B532FB3B8EAA8C8F43A2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				25479274F4CC2B870F3D3A62 /* Rates */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B04B76E212B155A00CDD88A /* ExchangeRates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B04B7BB212B155B00CDD88A /* Build configuration list for PBXNativeTarget "ExchangeRates" */;
+			buildPhases = (
+				6FBB1E25416757D073887725 /* [CP] Check Pods Manifest.lock */,
+				8B04B76A212B155A00CDD88A /* Sources */,
+				8B04B76B212B155A00CDD88A /* Frameworks */,
+				8B04B76C212B155A00CDD88A /* Resources */,
+				8B04B76D212B155A00CDD88A /* Swift Lint */,
+				41FB7017D83BC6CB6FA953F0 /* [CP] Embed Pods Frameworks */,
+				408E6511224B2A1461D11805 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExchangeRates;
+			productName = ExchangeRates;
+			productReference = 8B04B76F212B155A00CDD88A /* ExchangeRates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B04B7AE212B155B00CDD88A /* ExchangeRatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B04B7BE212B155B00CDD88A /* Build configuration list for PBXNativeTarget "ExchangeRatesTests" */;
+			buildPhases = (
+				3620773C1EC502839E40F2FD /* [CP] Check Pods Manifest.lock */,
+				8B04B7AB212B155B00CDD88A /* Sources */,
+				8B04B7AC212B155B00CDD88A /* Frameworks */,
+				8B04B7AD212B155B00CDD88A /* Resources */,
+				5A11DA27D95F142D637C0058 /* [CP] Embed Pods Frameworks */,
+				E062A17FD96A7C35F8F875DA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B04B7B1212B155B00CDD88A /* PBXTargetDependency */,
+			);
+			name = ExchangeRatesTests;
+			productName = ExchangeRatesTests;
+			productReference = 8B04B7AF212B155B00CDD88A /* ExchangeRatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B04B766212B155A00CDD88A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Ivan Smetanin";
+				TargetAttributes = {
+					8B04B76E212B155A00CDD88A = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					8B04B7AE212B155B00CDD88A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 8B04B76E212B155A00CDD88A;
+					};
+				};
+			};
+			buildConfigurationList = 8B04B769212B155A00CDD88A /* Build configuration list for PBXProject "ExchangeRates" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8B04B765212B155A00CDD88A;
+			productRefGroup = 8B04B770212B155A00CDD88A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B04B76E212B155A00CDD88A /* ExchangeRates */,
+				8B04B7AE212B155B00CDD88A /* ExchangeRatesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B04B76C212B155A00CDD88A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04B777212B155A00CDD88A /* .gitignore in Resources */,
+				8B04B799212B155B00CDD88A /* LaunchScreen.xib in Resources */,
+				8B04B7A1212B155B00CDD88A /* Gemfile in Resources */,
+				8B04B7A5212B155B00CDD88A /* .swiftlint.yml in Resources */,
+				8B04B79B212B155B00CDD88A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04B7AD212B155B00CDD88A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3620773C1EC502839E40F2FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExchangeRates-ExchangeRatesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		408E6511224B2A1461D11805 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41FB7017D83BC6CB6FA953F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A11DA27D95F142D637C0058 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRates-ExchangeRatesTests/Pods-ExchangeRates-ExchangeRatesTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRates-ExchangeRatesTests/Pods-ExchangeRates-ExchangeRatesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FBB1E25416757D073887725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExchangeRates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B04B76D212B155A00CDD88A /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PODS_ROOT/SwiftLint/swiftlint;
+		};
+		E062A17FD96A7C35F8F875DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRates-ExchangeRatesTests/Pods-ExchangeRates-ExchangeRatesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B04B76A212B155A00CDD88A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04B79D212B155B00CDD88A /* AppDelegate.swift in Sources */,
+				8B04B7A9212B155B00CDD88A /* ModuleTransitionable.swift in Sources */,
+				D5412B7A9B18791DF313763A /* RatesModuleConfigurator.swift in Sources */,
+				4F1150270AB6451756611766 /* RatesRouter.swift in Sources */,
+				3F537FE6DAE306B7F139EA80 /* RatesRouterInput.swift in Sources */,
+				45BF87A12D0A90B2050511D8 /* RatesPresenter.swift in Sources */,
+				19E379CE42D0ECA84E0F36FB /* RatesModuleInput.swift in Sources */,
+				040E4EC7124D0849FB9085BF /* RatesModuleOutput.swift in Sources */,
+				A6E22F00A358AE8919EEB805 /* RatesViewController.swift in Sources */,
+				6CE24FA2BB72C2D4703CD569 /* RatesViewInput.swift in Sources */,
+				2C993D0AC2925954DC8DBEE1 /* RatesViewOutput.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04B7AB212B155B00CDD88A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04B7B4212B155B00CDD88A /* ExchangeRatesTests.swift in Sources */,
+				A28387ADAD1C85384E0EB139 /* RatesModuleConfiguratorTests.swift in Sources */,
+				3B7FEB634723A965B3699BE5 /* RatesRouterTests.swift in Sources */,
+				55980249D691D7C2C648B0F8 /* RatesPresenterTests.swift in Sources */,
+				CEE1055140CA14F74BCC18AE /* RatesViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B04B7B1212B155B00CDD88A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B04B76E212B155A00CDD88A /* ExchangeRates */;
+			targetProxy = 8B04B7B0212B155B00CDD88A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8B04B7B9212B155B00CDD88A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B04B7BA212B155B00CDD88A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B04B7BC212B155B00CDD88A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D5314B7AECCC37C67880087 /* Pods-ExchangeRates.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A4NNFV669G;
+				INFOPLIST_FILE = ExchangeRates/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingunderthehood.ExchangeRates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B04B7BD212B155B00CDD88A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1E75C231BB9E1D544E7C56B /* Pods-ExchangeRates.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A4NNFV669G;
+				INFOPLIST_FILE = ExchangeRates/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingunderthehood.ExchangeRates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8B04B7BF212B155B00CDD88A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB8D018405F768670B853DA7 /* Pods-ExchangeRates-ExchangeRatesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A4NNFV669G;
+				INFOPLIST_FILE = ExchangeRatesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingunderthehood.ExchangeRatesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRates.app/ExchangeRates";
+			};
+			name = Debug;
+		};
+		8B04B7C0212B155B00CDD88A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07F4B99BE0448CBFA69F910A /* Pods-ExchangeRates-ExchangeRatesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A4NNFV669G;
+				INFOPLIST_FILE = ExchangeRatesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingunderthehood.ExchangeRatesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRates.app/ExchangeRates";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B04B769212B155A00CDD88A /* Build configuration list for PBXProject "ExchangeRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B04B7B9212B155B00CDD88A /* Debug */,
+				8B04B7BA212B155B00CDD88A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B04B7BB212B155B00CDD88A /* Build configuration list for PBXNativeTarget "ExchangeRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B04B7BC212B155B00CDD88A /* Debug */,
+				8B04B7BD212B155B00CDD88A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B04B7BE212B155B00CDD88A /* Build configuration list for PBXNativeTarget "ExchangeRatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B04B7BF212B155B00CDD88A /* Debug */,
+				8B04B7C0212B155B00CDD88A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B04B766212B155A00CDD88A /* Project object */;
+}
