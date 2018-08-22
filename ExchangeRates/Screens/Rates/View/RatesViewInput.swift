@@ -6,4 +6,6 @@
 //
 
 protocol RatesViewInput: class {
+    func configure(with state: RatesViewState)
+    func select(currency: CurrencyBundle)
 }

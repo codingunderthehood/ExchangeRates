@@ -13,6 +13,7 @@ final class RatesViewController: UIViewController, RatesViewInput, ModuleTransit
     // MARK: - Subviews
 
     private let tableView = UITableView()
+    private let activityIndicator = UIActivityIndicatorView()
 
     // MARK: - Properties
 
@@ -23,30 +24,67 @@ final class RatesViewController: UIViewController, RatesViewInput, ModuleTransit
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        output?.loadData()
         adapter.set(tableView: tableView)
-        adapter.configure(with: ["GBP",
-                                 "EUR",
-                                 "USD",
-                                 "AUD"]
-        )
-        tableView.reloadData()
+        adapter.didChangeAmount = { [weak self] amount in
+            self?.output?.change(amount: amount)
+        }
+        adapter.didSelectCurrency = { [weak self] currency in
+            self?.output?.select(currency: currency)
+        }
+        configureSubviews()
     }
 
     override func loadView() {
         super.loadView()
         view.addSubview(tableView)
+        view.addSubview(activityIndicator)
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        layoutSubviews()
+    }
+
+    // MARK: - RatesViewInput
+
+    func configure(with state: RatesViewState) {
+        switch state {
+        case .loading:
+            activityIndicator.startAnimating()
+        case .error:
+            activityIndicator.stopAnimating()
+        case .data(let currencies):
+            activityIndicator.stopAnimating()
+            adapter.configure(with: currencies)
+        }
+    }
+
+    func select(currency: CurrencyBundle) {
+        adapter.select(item: currency)
+    }
+
+    // MARK: - Private methods
+
+    private func configureSubviews() {
+        view.backgroundColor = .white
+
+        tableView.separatorStyle = .none
+        tableView.keyboardDismissMode = .onDrag
+
+        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.hidesWhenStopped = true
+    }
+
+    private func layoutSubviews() {
         tableView.pin
             .top(view.pin.safeArea)
             .bottom(view.pin.safeArea)
             .start(view.pin.safeArea)
             .end(view.pin.safeArea)
-    }
 
-    // MARK: - RatesViewInput
+        activityIndicator.pin
+            .center()
+    }
 
 }

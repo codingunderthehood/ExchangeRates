@@ -12,8 +12,8 @@ final class RatesTableViewCell: UITableViewCell {
 
     // MARK: - Subviews
 
+    private let currencyCodeLabel = UILabel()
     private let currencyNameLabel = UILabel()
-    private let currencyFullnameLabel = UILabel()
     private let rateTextField = UITextField()
     private let rateTextFieldUnderlineView = UIView()
 
@@ -25,35 +25,15 @@ final class RatesTableViewCell: UITableViewCell {
         static let defaultMargin: CGFloat = 8
     }
 
+    // MARK: - Properties
+
+    var didChangeAmount: StringClosure?
+
     // MARK: - Initialization and deinitialization
 
     init() {
         super.init(style: .default, reuseIdentifier: RatesTableViewCell.reuseIdentifier)
-        backgroundColor = .white
-
-        currencyNameLabel.numberOfLines = 1
-        currencyNameLabel.font = UIFont.systemFont(ofSize: 20)
-        currencyFullnameLabel.textColor = .black
-        contentView.addSubview(currencyNameLabel)
-
-        currencyFullnameLabel.numberOfLines = 1
-        currencyFullnameLabel.font = UIFont.systemFont(ofSize: 14)
-        currencyFullnameLabel.textColor = .gray
-        contentView.addSubview(currencyFullnameLabel)
-
-        rateTextField.font = UIFont.systemFont(ofSize: 20)
-        rateTextField.textColor = .black
-        rateTextField.keyboardType = .decimalPad
-        rateTextField.returnKeyType = .done
-        rateTextField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
-        rateTextField.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
-        rateTextField.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
-        rateTextField.textAlignment = .center
-        rateTextField.isEnabled = false
-        contentView.addSubview(rateTextField)
-
-        rateTextFieldUnderlineView.backgroundColor = .lightGray
-        contentView.addSubview(rateTextFieldUnderlineView)
+        setupSubviews()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -67,29 +47,59 @@ final class RatesTableViewCell: UITableViewCell {
         layout()
     }
 
-    // MARK: - Internal methods
-
-    func configure(with str: String) {
-        self.currencyNameLabel.text = str
-        self.currencyFullnameLabel.text = "Some Text"
+    override func becomeFirstResponder() -> Bool {
+        rateTextField.isUserInteractionEnabled = true
+        return rateTextField.becomeFirstResponder()
     }
 
-    func startEditing() {
-        rateTextField.isEnabled = true
-        rateTextField.becomeFirstResponder()
+    // MARK: - Internal methods
+
+    func configure(with currency: CurrencyBundle) {
+        self.currencyCodeLabel.text = currency.code
+        self.currencyNameLabel.text = currency.name
+        self.rateTextField.text = currency.formattedValue
     }
 
     // MARK: - Private methods
 
+    private func setupSubviews() {
+        backgroundColor = .white
+
+        currencyCodeLabel.numberOfLines = 1
+        currencyCodeLabel.font = UIFont.systemFont(ofSize: 20)
+        currencyNameLabel.textColor = .black
+        contentView.addSubview(currencyCodeLabel)
+
+        currencyNameLabel.numberOfLines = 1
+        currencyNameLabel.font = UIFont.systemFont(ofSize: 14)
+        currencyNameLabel.textColor = .gray
+        contentView.addSubview(currencyNameLabel)
+
+        rateTextField.font = UIFont.systemFont(ofSize: 20)
+        rateTextField.textColor = .black
+        rateTextField.keyboardType = .decimalPad
+        rateTextField.returnKeyType = .done
+        rateTextField.placeholder = "0"
+        rateTextField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
+        rateTextField.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
+        rateTextField.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
+        rateTextField.textAlignment = .center
+        rateTextField.isEnabled = false
+        contentView.addSubview(rateTextField)
+
+        rateTextFieldUnderlineView.backgroundColor = .lightGray
+        contentView.addSubview(rateTextFieldUnderlineView)
+    }
+
     private func layout() {
-        currencyNameLabel.pin
+        currencyCodeLabel.pin
             .top(contentView.pin.safeArea)
             .start(contentView.pin.safeArea)
             .margin(Constants.defaultMargin)
             .sizeToFit()
 
-        currencyFullnameLabel.pin
-            .below(of: currencyNameLabel, aligned: .start)
+        currencyNameLabel.pin
+            .below(of: currencyCodeLabel, aligned: .start)
             .bottom(contentView.pin.safeArea)
             .marginStart(0)
             .marginBottom(Constants.defaultMargin)
@@ -101,7 +111,7 @@ final class RatesTableViewCell: UITableViewCell {
     private func layoutRateTextField() {
         let maxWidth = contentView.frame.width
             - Constants.defaultMargin * 3
-            - max(currencyFullnameLabel.frame.width, currencyNameLabel.frame.width)
+            - max(currencyNameLabel.frame.width, currencyCodeLabel.frame.width)
 
         rateTextField.pin
             .vCenter()
@@ -124,6 +134,7 @@ final class RatesTableViewCell: UITableViewCell {
     @objc
     private func didChangeDescription() {
         layoutRateTextField()
+        didChangeAmount?(rateTextField.text ?? "")
     }
 
     @objc

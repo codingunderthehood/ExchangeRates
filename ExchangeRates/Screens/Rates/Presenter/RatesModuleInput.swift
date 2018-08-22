@@ -6,4 +6,5 @@
 //
 
 protocol RatesModuleInput: class {
+    func configure(with service: RatesAbstractService)
 }

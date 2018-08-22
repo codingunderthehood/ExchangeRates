@@ -6,4 +6,7 @@
 //
 
 protocol RatesViewOutput {
+    func loadData()
+    func select(currency: CurrencyBundle)
+    func change(amount: String)
 }

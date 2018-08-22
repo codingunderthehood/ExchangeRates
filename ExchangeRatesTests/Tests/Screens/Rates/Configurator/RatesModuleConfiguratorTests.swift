@@ -12,13 +12,6 @@ final class RatesModuleConfiguratorTests: XCTestCase {
 
 	// MARK: - Main tests
 
-    func testThatViewControllerLoadsCorrectly() {
-        if UIStoryboard(name: String(describing: RatesViewController.self),
-                        bundle: Bundle.main).instantiateInitialViewController() == nil {
-            XCTFail("Can't load RatesViewController from storyboard, check that controller is initial view controller")
-        }
-    }
-
     func testThatScreenConfiguresCorrectly() {
         // when
         let viewController = RatesModuleConfigurator().configure()

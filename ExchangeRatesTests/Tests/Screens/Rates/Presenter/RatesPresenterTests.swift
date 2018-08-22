@@ -34,26 +34,19 @@ final class RatesPresenterTest: XCTestCase {
         view = nil
     }
 
-    // MARK: - Main tests
-
-    func testThatPresenterHandlesViewLoadedEvent() {
-        // when 
-        presenter?.viewLoaded()
-        // then
-        XCTAssertTrue((presenter?.view as? MockViewController)?.setupInitialStateWasCalled == true)
-    }
-
     // MARK: - Mocks
 
     private final class MockRouter: RatesRouterInput {
     }
 
     private final class MockViewController: RatesViewInput {
-        var setupInitialStateWasCalled: Bool = false
 
-        func setupInitialState() {
-            setupInitialStateWasCalled = true
+        func configure(with state: RatesViewState) {
         }
+
+        func select(currency: CurrencyBundle) {
+        }
+
     }
 
     private final class MockModuleOutput: RatesModuleOutput {

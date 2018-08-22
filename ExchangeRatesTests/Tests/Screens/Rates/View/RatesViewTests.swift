@@ -32,21 +32,23 @@ final class RatesViewTests: XCTestCase {
 
     // MARK: - Main tests
 
-    func testThatViewNotifiesPresenterOnDidLoad() {
+    func testThatViewCallsLoadData() {
         // when
-        self.view?.viewDidLoad()
+        view?.viewDidLoad()
         // then
-        XCTAssert(self.output?.viewLoadedWasCalled == true)
+        XCTAssert(output?.loadDataWasCalled == true)
     }
 
     // MARK: - Mocks
 
     final class RatesViewOutputMock: RatesViewOutput {
-        var viewLoadedWasCalled: Bool = false
 
-        func viewLoaded() {
-            viewLoadedWasCalled = true
+        var loadDataWasCalled: Bool = false
+
+        func loadData() {
+            loadDataWasCalled = true
         }
+
     }
 
 }
