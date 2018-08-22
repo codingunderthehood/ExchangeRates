@@ -18,7 +18,9 @@ final class RatesTableViewAdapter: NSObject {
     func set(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 62
+        tableView.keyboardDismissMode = .onDrag
         tableView.register(RatesTableViewCell.self, forCellReuseIdentifier: RatesTableViewCell.reuseIdentifier)
     }
 
@@ -50,6 +52,7 @@ extension RatesTableViewAdapter: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        (tableView.cellForRow(at: indexPath) as? RatesTableViewCell)?.startEditing()
     }
 
 }
