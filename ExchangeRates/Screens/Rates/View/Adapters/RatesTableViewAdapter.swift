@@ -23,7 +23,7 @@ final class RatesTableViewAdapter: NSObject {
         self.tableView = tableView
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 62
+        tableView.estimatedRowHeight = 58
         tableView.register(RatesTableViewCell.self, forCellReuseIdentifier: RatesTableViewCell.reuseIdentifier)
     }
 
@@ -35,12 +35,15 @@ final class RatesTableViewAdapter: NSObject {
         guard let itemIndex = items.index(of: item) else {
             return
         }
-//        let firstItemIndexPath = IndexPath(row: 0, section: 0)
+        let firstItemIndexPath = IndexPath(row: 0, section: 0)
         let itemIndexPath = IndexPath(row: itemIndex, section: 0)
-//        tableView?.beginUpdates()
-//        tableView?.moveRow(at: itemIndexPath, to: firstItemIndexPath)
-//        tableView?.endUpdates()
-//        tableView?.scrollToRow(at: firstItemIndexPath, at: .top, animated: true)
+        guard firstItemIndexPath != itemIndexPath else {
+            return
+        }
+        tableView?.beginUpdates()
+        tableView?.moveRow(at: itemIndexPath, to: firstItemIndexPath)
+        tableView?.endUpdates()
+        tableView?.scrollToRow(at: firstItemIndexPath, at: .top, animated: true)
         tableView?.cellForRow(at: itemIndexPath)?.becomeFirstResponder()
     }
 
