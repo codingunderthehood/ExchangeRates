@@ -84,7 +84,7 @@ final class RatesTableViewCell: UITableViewCell {
         rateTextField.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
         rateTextField.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
         rateTextField.textAlignment = .center
-        rateTextField.isEnabled = false
+        rateTextField.isUserInteractionEnabled = false
         contentView.addSubview(rateTextField)
 
         rateTextFieldUnderlineView.backgroundColor = .lightGray
@@ -145,7 +145,7 @@ final class RatesTableViewCell: UITableViewCell {
     @objc
     private func editingDidEnd() {
         unhighlightRateTextField()
-        rateTextField.isEnabled = false
+        rateTextField.isUserInteractionEnabled = false
     }
 
     private func highlightRateTextField() {

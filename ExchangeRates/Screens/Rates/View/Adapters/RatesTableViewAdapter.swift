@@ -37,6 +37,9 @@ final class RatesTableViewAdapter: NSObject {
         }
         let firstItemIndexPath = IndexPath(row: 0, section: 0)
         let itemIndexPath = IndexPath(row: itemIndex, section: 0)
+        defer {
+            tableView?.cellForRow(at: firstItemIndexPath)?.becomeFirstResponder()
+        }
         guard firstItemIndexPath != itemIndexPath else {
             return
         }
@@ -44,7 +47,6 @@ final class RatesTableViewAdapter: NSObject {
         tableView?.moveRow(at: itemIndexPath, to: firstItemIndexPath)
         tableView?.endUpdates()
         tableView?.scrollToRow(at: firstItemIndexPath, at: .top, animated: true)
-        tableView?.cellForRow(at: itemIndexPath)?.becomeFirstResponder()
     }
 
 }
