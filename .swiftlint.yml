@@ -1,3 +1,10 @@
+included:
+  - ExchangeRates
+  - ExchangeRatesTests
+
+excluded:
+  - Pods
+
 whitelist_rules:
     - attributes
     - class_delegate_protocol
