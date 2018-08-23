@@ -49,6 +49,10 @@ final class RatesViewTests: XCTestCase {
             loadDataWasCalled = true
         }
 
+        func select(currency: CurrencyBundle) {}
+
+        func change(amount: String) {}
+
     }
 
 }

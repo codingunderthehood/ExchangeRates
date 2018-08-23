@@ -25,7 +25,6 @@
 		8B04B7A1212B155B00CDD88A /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B7A0212B155B00CDD88A /* Gemfile */; };
 		8B04B7A5212B155B00CDD88A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8B04B7A4212B155B00CDD88A /* .swiftlint.yml */; };
 		8B04B7A9212B155B00CDD88A /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04B7A8212B155B00CDD88A /* ModuleTransitionable.swift */; };
-		8B04B7B4212B155B00CDD88A /* ExchangeRatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04B7B3212B155B00CDD88A /* ExchangeRatesTests.swift */; };
 		8B270704212B4A9D00302639 /* RatesTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B270703212B4A9D00302639 /* RatesTableViewAdapter.swift */; };
 		8B270706212B4AD100302639 /* RatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B270705212B4AD100302639 /* RatesTableViewCell.swift */; };
 		8B27075E212DE42000302639 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27075D212DE42000302639 /* Currency.swift */; };
@@ -85,7 +84,6 @@
 		8B04B7A8212B155B00CDD88A /* ModuleTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
 		8B04B7AA212B155B00CDD88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B04B7AF212B155B00CDD88A /* ExchangeRatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B04B7B3212B155B00CDD88A /* ExchangeRatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesTests.swift; sourceTree = "<group>"; };
 		8B04B7B8212B155B00CDD88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B270703212B4A9D00302639 /* RatesTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableViewAdapter.swift; sourceTree = "<group>"; };
 		8B270705212B4AD100302639 /* RatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableViewCell.swift; sourceTree = "<group>"; };
@@ -386,7 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				8B04B7B5212B155B00CDD88A /* Tests */,
-				8B04B7B3212B155B00CDD88A /* ExchangeRatesTests.swift */,
 				8B04B7B8212B155B00CDD88A /* Info.plist */,
 			);
 			path = ExchangeRatesTests;
@@ -395,9 +392,9 @@
 		8B04B7B5212B155B00CDD88A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F199B532FB3B8EAA8C8F43A2 /* Screens */,
-				8B27076B212DE9F800302639 /* CurrencyBundleTests.swift */,
 				8B27076F212DEA2900302639 /* Library */,
+				8B299172212E8EF00024F16C /* Models */,
+				F199B532FB3B8EAA8C8F43A2 /* Screens */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -432,6 +429,22 @@
 				8B27076D212DEA2600302639 /* NumberFormatterTests.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B299172212E8EF00024F16C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B299173212E8EF80024F16C /* Entity */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B299173212E8EF80024F16C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8B27076B212DE9F800302639 /* CurrencyBundleTests.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		AAA1FF9B67627C5496793622 /* View */ = {
@@ -756,7 +769,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B27076C212DE9F800302639 /* CurrencyBundleTests.swift in Sources */,
-				8B04B7B4212B155B00CDD88A /* ExchangeRatesTests.swift in Sources */,
 				A28387ADAD1C85384E0EB139 /* RatesModuleConfiguratorTests.swift in Sources */,
 				8B27076E212DEA2600302639 /* NumberFormatterTests.swift in Sources */,
 				3B7FEB634723A965B3699BE5 /* RatesRouterTests.swift in Sources */,
