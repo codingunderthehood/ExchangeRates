@@ -8,7 +8,7 @@ before_install:
 
 script:
   - set -o pipefail
-  - xcodebuild test -workspace ExchangeRates.xcworkspace -scheme ExchangeRates -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES - destination 'platform=iOS Simulator,name=iPhone 8,OS=11.1' | xcpretty -c 
+  - xcodebuild test -workspace ExchangeRates.xcworkspace -scheme ExchangeRates -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.1' | xcpretty -c 
   
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t ed528b59-79ea-4254-8935-454815fb24e8
