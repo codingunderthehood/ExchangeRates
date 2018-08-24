@@ -12,7 +12,7 @@ final class CurrencyBundle {
     // MARK: - Properties
 
     var formattedValue: String = ""
-    var value: Double {
+    var value: Double? {
         didSet {
             handleValueUpdate()
         }
@@ -29,7 +29,7 @@ final class CurrencyBundle {
 
     // MARK: - Initialization and deinitialization
 
-    init(currency: Currency, value: Double) {
+    init(currency: Currency, value: Double?) {
         self.currency = currency
         self.value = value
         handleValueUpdate()
@@ -38,6 +38,10 @@ final class CurrencyBundle {
     // MARK: - Private methods
 
     private func handleValueUpdate() {
+        guard let value = value else {
+            self.formattedValue = ""
+            return
+        }
         if value.truncatingRemainder(dividingBy: 1) == 0 {
             self.formattedValue = String(format: "%.0f", value)
         } else {

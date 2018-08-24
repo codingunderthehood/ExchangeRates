@@ -28,23 +28,41 @@ final class RatesTableViewAdapter: NSObject {
     }
 
     func configure(with items: [CurrencyBundle]) {
+        // Reload all table cells if there is no cell previous
+        let isNeedReloadAll = self.items.isEmpty
+        self.items = items
+
+        if isNeedReloadAll {
+            tableView?.reloadData()
+        } else {
+            // Update from 1 to end
+            let indexPathsToUpdate = (1..<items.count).map { IndexPath(row: $0, section: 0) }
+            UIView.performWithoutAnimation {
+                self.tableView?.reloadRows(at: indexPathsToUpdate, with: .none)
+            }
+        }
+
         self.items = items
     }
 
     func select(item: CurrencyBundle) {
-        guard let itemIndex = items.index(of: item) else {
-            return
-        }
-        let firstItemIndexPath = IndexPath(row: 0, section: 0)
-        let itemIndexPath = IndexPath(row: itemIndex, section: 0)
         defer {
-            tableView?.cellForRow(at: firstItemIndexPath)?.becomeFirstResponder()
+            tableView?.cellForRow(at: IndexPath(row: 0, section: 0))?.becomeFirstResponder()
         }
-        guard firstItemIndexPath != itemIndexPath else {
+
+        guard let itemIndex = items.index(of: item), itemIndex != 0 else {
             return
         }
+
+        moveItemTopTopInTable(itemIndex: IndexPath(row: itemIndex, section: 0))
+    }
+
+    // MARK: - Private methods
+
+    private func moveItemTopTopInTable(itemIndex: IndexPath) {
+        let firstItemIndexPath = IndexPath(row: 0, section: 0)
         tableView?.beginUpdates()
-        tableView?.moveRow(at: itemIndexPath, to: firstItemIndexPath)
+        tableView?.moveRow(at: itemIndex, to: firstItemIndexPath)
         tableView?.endUpdates()
         tableView?.scrollToRow(at: firstItemIndexPath, at: .top, animated: true)
     }

@@ -57,7 +57,6 @@ final class RatesViewController: UIViewController, RatesViewInput, ModuleTransit
         case .data(let currencies):
             activityIndicator.stopAnimating()
             adapter.configure(with: currencies)
-            tableView.reloadData()
         }
     }
 
