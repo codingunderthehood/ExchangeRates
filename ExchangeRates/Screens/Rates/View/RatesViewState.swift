@@ -9,6 +9,6 @@ import Foundation
 
 enum RatesViewState {
     case loading
-    case error
+    case error(error: Error)
     case data(currencies: [CurrencyBundle])
 }
