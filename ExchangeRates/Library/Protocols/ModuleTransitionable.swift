@@ -28,24 +28,24 @@ import UIKit
 /// 2. If screen A can be open from screen B, C, D in different ways
 ///
 /// ```
-///protocol CustomModuleTransitionable: class, ModuleTransitionable {
-///    func showModuleWithCustomTransitionFromB(_ module: UIViewController)
-///    func showModuleWithCustomTransitionFromC(_ module: UIViewController)
-///    func showModuleWithCustomTransitionFromD(_ module: UIViewController)
-///}
+/// protocol CustomModuleTransitionable: class, ModuleTransitionable {
+///     func showModuleWithCustomTransitionFromB(_ module: UIViewController)
+///     func showModuleWithCustomTransitionFromC(_ module: UIViewController)
+///     func showModuleWithCustomTransitionFromD(_ module: UIViewController)
+/// }
 ///
-///extension CustomModuleTransitionable {
-///    func showModuleWithCustomTransitionFromB(_ module: UIViewController) {
-///        *do something custom to show from B*
-///    }
-///    func showModuleWithCustomTransitionFromC(_ module: UIViewController) {
-///        *do something custom to show from С*
-///    }
-///    func showModuleWithCustomTransitionFromD(_ module: UIViewController) {
-///        *do something custom to show from D*
-///    }
-///}
-///```
+/// extension CustomModuleTransitionable {
+///     func showModuleWithCustomTransitionFromB(_ module: UIViewController) {
+///         *do something custom to show from B*
+///     }
+///     func showModuleWithCustomTransitionFromC(_ module: UIViewController) {
+///         *do something custom to show from С*
+///     }
+///     func showModuleWithCustomTransitionFromD(_ module: UIViewController) {
+///         *do something custom to show from D*
+///     }
+/// }
+/// ```
 protocol ModuleTransitionable: class {
     func showModule(_ module: UIViewController)
     func dismissView(animated: Bool, completion: (() -> Void)?)
@@ -81,4 +81,5 @@ extension ModuleTransitionable where Self: UIViewController {
         module.hidesBottomBarWhenPushed = hideTabBar
         push(module: module, animated: animated)
     }
+
 }

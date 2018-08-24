@@ -7,18 +7,16 @@
 
 import Foundation
 
-protocol RatesAbstractService {
-    func subscribeOnRates(currencyCode: String, onCompleted: @escaping  ([Rate]) -> Void, onError: (Error) -> Void)
-}
-
 public extension Double {
+
     /// SwiftRandom extension
     public static func random(lower: Double = 0, upper: Double = 100) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
     }
+
 }
 
-final class RatesService: RatesAbstractService {
+final class RatesMockService: RatesAbstractService {
 
     private var timer: Timer?
 
@@ -37,18 +35,6 @@ final class RatesService: RatesAbstractService {
 
 }
 
-class RatesConverter {
-
-    func convertToCurrency(rate: Rate, amount: Double) -> CurrencyBundle {
-        return CurrencyBundle(currency: rate.targetCurrency, value: amount * rate.value)
-    }
-
-    func convertToCurrencies(rates: [Rate], amount: Double) -> [CurrencyBundle] {
-        return rates.map { self.convertToCurrency(rate: $0, amount: amount) }
-    }
-
-}
-
 final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
     // MARK: - Properties
@@ -58,7 +44,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
     var output: RatesModuleOutput?
     private var currentAmount: Double = 1
     private var currentCurrencyCode: String = Currency.default.code
-    private var service: RatesAbstractService? = RatesService()
+    private var service: RatesAbstractService? = RatesMockService()
 
     private var rates: [Rate] = []
     private var converter: RatesConverter = RatesConverter()
@@ -100,10 +86,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
     private func subscribeOnRatesUpdating(currencyCode: String) {
         service?.subscribeOnRates(currencyCode: currencyCode, onCompleted: { [weak self] rates in
-            guard let `self` = self else {
-                return
-            }
-            self.handleRatesUpdating(rates: rates)
+            self?.handleRatesUpdating(rates: rates)
         }, onError: { [weak self] error in
             self?.view?.configure(with: .error(error: error))
         })
