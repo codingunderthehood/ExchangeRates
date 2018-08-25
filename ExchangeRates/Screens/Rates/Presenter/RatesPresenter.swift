@@ -105,9 +105,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
         }
         var updatedRates: [Rate] = []
         for rate in self.rates {
-            guard let index = rates.index(
-                where: { $0.targetCurrency == rate.targetCurrency }
-            ) else {
+            guard let index = rates.index(where: { $0.targetCurrency == rate.targetCurrency }) else {
                 continue
             }
             updatedRates.append(rates[index])

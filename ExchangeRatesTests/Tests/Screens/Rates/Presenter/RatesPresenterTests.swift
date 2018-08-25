@@ -159,6 +159,32 @@ final class RatesPresenterTest: XCTestCase {
         }
     }
 
+    func testThatSelectCurentCurrencyNotCallsForNewRates() {
+        // given
+        let currencyCode = "EUR"
+        let rate = Rate(baseCurrency: Currency(code: currencyCode), targetCurrency: Currency(code: currencyCode), value: 1)
+
+        let service = MockRatesService()
+        service.responsePolicy = .returnData(
+            data: [rate]
+        )
+        presenter?.configure(with: service)
+
+        let expectation = self.expectation(description: "Configure calling")
+        expectation.expectedFulfillmentCount = 2 // configure with .loading -> configure with .data
+        view?.configureExpectation = expectation
+
+        // when
+        presenter?.loadData()
+        presenter?.select(currency: CurrencyBundle(currency: Currency(code: currencyCode), value: nil))
+        waitForExpectations(timeout: 5, handler: nil)
+
+        // then
+        XCTAssert(service.currentCurrencyCode == currencyCode, "Expected \(currencyCode), got \(service.currentCurrencyCode)")
+        XCTAssert(view?.selectWasCalled == true)
+        XCTAssert(service.subscribeOnRatesCallsCount == 1)
+    }
+
     func testThatSelectNewCurrencyCallsForNewRates() {
         // given
         let expectedCurrencyCode = "NewCurrency"
@@ -182,6 +208,8 @@ final class RatesPresenterTest: XCTestCase {
 
         // then
         XCTAssert(service.currentCurrencyCode == expectedCurrencyCode, "Expected \(expectedCurrencyCode), got \(service.currentCurrencyCode)")
+        XCTAssert(view?.selectWasCalled == true)
+        XCTAssert(service.subscribeOnRatesCallsCount == 2)
     }
 
     func testThatChangingAmountChangesCurrenciesAmount() {
@@ -226,6 +254,7 @@ final class RatesPresenterTest: XCTestCase {
 
         var lastReceivedState: RatesViewState? = nil
         var configureExpectation: XCTestExpectation?
+        var selectWasCalled: Bool = false
 
         func configure(with state: RatesViewState) {
             guard let expectation = configureExpectation else {
@@ -237,6 +266,7 @@ final class RatesPresenterTest: XCTestCase {
         }
 
         func select(currency: CurrencyBundle) {
+            selectWasCalled = true
         }
 
     }
@@ -255,8 +285,10 @@ final class RatesPresenterTest: XCTestCase {
 
         var responsePolicy: ResponsePolicy = .returnError(error: NSError(domain: "domain", code: 1, userInfo: nil))
         var currentCurrencyCode: String = ""
+        var subscribeOnRatesCallsCount: Int = 0
 
         func subscribeOnRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: (Error) -> Void) {
+            subscribeOnRatesCallsCount += 1
             self.currentCurrencyCode = currencyCode
             switch responsePolicy {
             case .returnData(let data):

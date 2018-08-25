@@ -39,6 +39,7 @@
 		8B9263B921309F030006370E /* RatesAbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9263B821309F030006370E /* RatesAbstractService.swift */; };
 		8B9263BC21309F2C0006370E /* RatesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9263BB21309F2C0006370E /* RatesConverter.swift */; };
 		8B9263BE2130A6570006370E /* RatesConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9263BD2130A6570006370E /* RatesConverterTests.swift */; };
+		8BD36F8C2131473C0092415D /* RatesTableViewAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F8B2131473C0092415D /* RatesTableViewAdapterTests.swift */; };
 		A28387ADAD1C85384E0EB139 /* RatesModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292BB9654440330E71A4FE /* RatesModuleConfiguratorTests.swift */; };
 		A6E22F00A358AE8919EEB805 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57888BDB3199EB363104E06 /* RatesViewController.swift */; };
 		CEE1055140CA14F74BCC18AE /* RatesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B1669F96F919D924C1AE3 /* RatesViewTests.swift */; };
@@ -103,6 +104,7 @@
 		8B9263B821309F030006370E /* RatesAbstractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesAbstractService.swift; sourceTree = "<group>"; };
 		8B9263BB21309F2C0006370E /* RatesConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverter.swift; sourceTree = "<group>"; };
 		8B9263BD2130A6570006370E /* RatesConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverterTests.swift; sourceTree = "<group>"; };
+		8BD36F8B2131473C0092415D /* RatesTableViewAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableViewAdapterTests.swift; sourceTree = "<group>"; };
 		8F2BE1744B0167A2F4F25A99 /* RatesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesPresenter.swift; sourceTree = "<group>"; };
 		A57888BDB3199EB363104E06 /* RatesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		C1E75C231BB9E1D544E7C56B /* Pods-ExchangeRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRates.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates.release.xcconfig"; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				802B1669F96F919D924C1AE3 /* RatesViewTests.swift */,
+				8BD36F8B2131473C0092415D /* RatesTableViewAdapterTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 			files = (
 				8B27076C212DE9F800302639 /* CurrencyBundleTests.swift in Sources */,
 				A28387ADAD1C85384E0EB139 /* RatesModuleConfiguratorTests.swift in Sources */,
+				8BD36F8C2131473C0092415D /* RatesTableViewAdapterTests.swift in Sources */,
 				8B27076E212DEA2600302639 /* NumberFormatterTests.swift in Sources */,
 				3B7FEB634723A965B3699BE5 /* RatesRouterTests.swift in Sources */,
 				55980249D691D7C2C648B0F8 /* RatesPresenterTests.swift in Sources */,
