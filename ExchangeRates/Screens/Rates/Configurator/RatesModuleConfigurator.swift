@@ -19,6 +19,8 @@ final class RatesModuleConfigurator {
         presenter.view = view
         presenter.router = router
         presenter.output = output
+        presenter.configure(with: RatesService())
+
         router.view = view
         view.output = presenter
 

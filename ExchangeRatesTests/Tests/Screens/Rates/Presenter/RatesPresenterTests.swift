@@ -10,6 +10,10 @@ import XCTest
 
 final class RatesPresenterTest: XCTestCase {
 
+    // MARK: - Constants
+
+    private let defaultSelectedCurrency: CurrencyBundle = CurrencyBundle(currency: Currency.default, value: 1)
+
     // MARK: - Properties
 
     private var presenter: RatesPresenter?
@@ -36,27 +40,7 @@ final class RatesPresenterTest: XCTestCase {
 
     // MARK: - Main tests
 
-    func testThatPresenterPassesEmptyDataToView() {
-        // given
-        let service = MockRatesService()
-        service.responsePolicy = .returnData(data: [])
-        presenter?.configure(with: service)
-
-        let expectation = self.expectation(description: "Configure calling")
-        expectation.expectedFulfillmentCount = 2 // configure with .loading -> configure with .data
-        view?.configureExpectation = expectation
-        // when
-        presenter?.loadData()
-        waitForExpectations(timeout: 5, handler: nil)
-        // then
-        if case .data(currencies: [])? = view?.lastReceivedState {
-            XCTAssert(true)
-        } else {
-            XCTFail("Expected \(RatesViewState.data(currencies: [])), got \(String(describing: view?.lastReceivedState))")
-        }
-    }
-
-    func testThatPresenterPassesNonEmptyDataToView() {
+    func testThatPresenterPassesDataToView() {
         // given
         let amount: Double = 10
         let rate = Rate(baseCurrency: Currency(code: "EUR"), targetCurrency: Currency(code: "EUR"), value: 1)
@@ -74,10 +58,10 @@ final class RatesPresenterTest: XCTestCase {
         presenter?.loadData()
         waitForExpectations(timeout: 5, handler: nil)
         // then
-        if case .data(currencies: [expectedCurrency])? = view?.lastReceivedState {
+        if case .data(currencies: [defaultSelectedCurrency, expectedCurrency])? = view?.lastReceivedState {
             XCTAssert(true)
         } else {
-            XCTFail("Expected \(RatesViewState.data(currencies: [])), got \(String(describing: view?.lastReceivedState))")
+            XCTFail("Expected \(RatesViewState.data(currencies: [defaultSelectedCurrency, expectedCurrency])), got \(String(describing: view?.lastReceivedState))")
         }
     }
 
@@ -152,10 +136,10 @@ final class RatesPresenterTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
 
         // then
-        if case .data(currencies: [expectedCurrency])? = view?.lastReceivedState {
+        if case .data(currencies: [defaultSelectedCurrency, expectedCurrency])? = view?.lastReceivedState {
             XCTAssert(true)
         } else {
-            XCTFail("Expected \(RatesViewState.data(currencies: [expectedCurrency])), got \(String(describing: view?.lastReceivedState))")
+            XCTFail("Expected \(RatesViewState.data(currencies: [defaultSelectedCurrency, expectedCurrency])), got \(String(describing: view?.lastReceivedState))")
         }
     }
 
@@ -287,7 +271,7 @@ final class RatesPresenterTest: XCTestCase {
         var currentCurrencyCode: String = ""
         var subscribeOnRatesCallsCount: Int = 0
 
-        func subscribeOnRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: (Error) -> Void) {
+        func getRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: @escaping (Error) -> Void) {
             subscribeOnRatesCallsCount += 1
             self.currentCurrencyCode = currencyCode
             switch responsePolicy {

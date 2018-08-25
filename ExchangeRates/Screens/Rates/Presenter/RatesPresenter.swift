@@ -20,7 +20,7 @@ final class RatesMockService: RatesAbstractService {
 
     private var timer: Timer?
 
-    func subscribeOnRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: (Error) -> Void) {
+    func getRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: @escaping (Error) -> Void) {
         self.timer?.invalidate()
         self.timer = nil
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { _ in
@@ -37,6 +37,12 @@ final class RatesMockService: RatesAbstractService {
 
 final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let ratesUpdatingInterval: TimeInterval = 1
+    }
+
     // MARK: - Properties
 
     weak var view: RatesViewInput?
@@ -44,7 +50,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
     var output: RatesModuleOutput?
     private var currentAmount: Double = 1
     private var currentCurrencyCode: String = Currency.default.code
-    private var service: RatesAbstractService? = RatesMockService()
+    private var service: RatesAbstractService?
 
     private var rates: [Rate] = []
     private var converter: RatesConverter = RatesConverter()
@@ -53,7 +59,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
     func loadData() {
         view?.configure(with: .loading)
-        subscribeOnRatesUpdating(currencyCode: currentCurrencyCode)
+        subscribeOnRatesUpdating()
     }
 
     func select(currency: CurrencyBundle) {
@@ -66,13 +72,14 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
         rates.insert(rate, at: 0)
         // Select currency in view
         view?.select(currency: currency)
-        // Subscribe to new currency
+        // Update currency code and amount
         currentCurrencyCode = currency.code
-        subscribeOnRatesUpdating(currencyCode: currentCurrencyCode)
+        currentAmount = currency.value ?? 0
     }
 
     func change(amount: String) {
         self.currentAmount = Double(amount) ?? 0
+        // Update view with updated data
         view?.configure(with: .data(currencies: converter.convertToCurrencies(rates: rates, amount: currentAmount)))
     }
 
@@ -84,11 +91,31 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
     // MARK: - Private methods
 
-    private func subscribeOnRatesUpdating(currencyCode: String) {
-        service?.subscribeOnRates(currencyCode: currencyCode, onCompleted: { [weak self] rates in
-            self?.handleRatesUpdating(rates: rates)
+    private func subscribeOnRatesUpdating() {
+        let newCall = {
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + Constants.ratesUpdatingInterval,
+                execute: {
+                    self.subscribeOnRatesUpdating()
+                }
+            )
+        }
+
+        service?.getRates(currencyCode: currentCurrencyCode, onCompleted: { [weak self] rates in
+            guard let `self` = self else {
+                return
+            }
+            // Add selected currency as first rate to pass to a view
+            let rateForSelectedCurrency = Rate(
+                baseCurrency: Currency(code: self.currentCurrencyCode),
+                targetCurrency: Currency(code: self.currentCurrencyCode),
+                value: 1
+            )
+            self.handleRatesUpdating(rates: [rateForSelectedCurrency] + rates)
+            newCall()
         }, onError: { [weak self] error in
             self?.view?.configure(with: .error(error: error))
+            newCall()
         })
     }
 
@@ -103,6 +130,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
             self.rates = rates
             return
         }
+
         var updatedRates: [Rate] = []
         for rate in self.rates {
             guard let index = rates.index(where: { $0.targetCurrency == rate.targetCurrency }) else {

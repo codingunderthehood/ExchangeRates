@@ -6,5 +6,5 @@
 //
 
 protocol RatesAbstractService {
-    func subscribeOnRates(currencyCode: String, onCompleted: @escaping  ([Rate]) -> Void, onError: (Error) -> Void)
+    func getRates(currencyCode: String, onCompleted: @escaping  ([Rate]) -> Void, onError: @escaping (Error) -> Void)
 }
