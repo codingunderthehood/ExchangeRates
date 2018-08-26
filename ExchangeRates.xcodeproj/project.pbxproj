@@ -40,6 +40,11 @@
 		8B9263BC21309F2C0006370E /* RatesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9263BB21309F2C0006370E /* RatesConverter.swift */; };
 		8B9263BE2130A6570006370E /* RatesConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9263BD2130A6570006370E /* RatesConverterTests.swift */; };
 		8BD36F8C2131473C0092415D /* RatesTableViewAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F8B2131473C0092415D /* RatesTableViewAdapterTests.swift */; };
+		8BD36F9021335B180092415D /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F8F21335B180092415D /* RuntimeError.swift */; };
+		8BD36F9221335B8B0092415D /* URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F9121335B8B0092415D /* URLRequestConvertible.swift */; };
+		8BD36F9421335C030092415D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F9321335C030092415D /* HTTPMethod.swift */; };
+		8BD36F9921335CC30092415D /* BaseServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F9821335CC30092415D /* BaseServerError.swift */; };
+		8BD36F9B21335D750092415D /* RatesServiceRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36F9A21335D750092415D /* RatesServiceRequests.swift */; };
 		A28387ADAD1C85384E0EB139 /* RatesModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292BB9654440330E71A4FE /* RatesModuleConfiguratorTests.swift */; };
 		A6E22F00A358AE8919EEB805 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57888BDB3199EB363104E06 /* RatesViewController.swift */; };
 		CEE1055140CA14F74BCC18AE /* RatesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B1669F96F919D924C1AE3 /* RatesViewTests.swift */; };
@@ -73,10 +78,7 @@
 		8B04B780212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8B04B782212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8B04B786212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8B04B78E212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8B04B790212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8B04B794212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		8B04B796212B155B00CDD88A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8B04B798212B155B00CDD88A /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		8B04B79A212B155B00CDD88A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B04B79C212B155B00CDD88A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,11 @@
 		8B9263BB21309F2C0006370E /* RatesConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverter.swift; sourceTree = "<group>"; };
 		8B9263BD2130A6570006370E /* RatesConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverterTests.swift; sourceTree = "<group>"; };
 		8BD36F8B2131473C0092415D /* RatesTableViewAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableViewAdapterTests.swift; sourceTree = "<group>"; };
+		8BD36F8F21335B180092415D /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
+		8BD36F9121335B8B0092415D /* URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertible.swift; sourceTree = "<group>"; };
+		8BD36F9321335C030092415D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		8BD36F9821335CC30092415D /* BaseServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServerError.swift; sourceTree = "<group>"; };
+		8BD36F9A21335D750092415D /* RatesServiceRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceRequests.swift; sourceTree = "<group>"; };
 		8F2BE1744B0167A2F4F25A99 /* RatesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesPresenter.swift; sourceTree = "<group>"; };
 		A57888BDB3199EB363104E06 /* RatesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		C1E75C231BB9E1D544E7C56B /* Pods-ExchangeRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRates.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRates/Pods-ExchangeRates.release.xcconfig"; sourceTree = "<group>"; };
@@ -342,7 +349,7 @@
 		8B04B78D212B155B00CDD88A /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8B04B78E212B155B00CDD88A /* .gitkeep */,
+				8BD36F8F21335B180092415D /* RuntimeError.swift */,
 			);
 			path = "Base Classes";
 			sourceTree = "<group>";
@@ -366,7 +373,7 @@
 		8B04B793212B155B00CDD88A /* Reusable Layer */ = {
 			isa = PBXGroup;
 			children = (
-				8B04B794212B155B00CDD88A /* .gitkeep */,
+				8BD36F9721335C410092415D /* Service */,
 			);
 			path = "Reusable Layer";
 			sourceTree = "<group>";
@@ -374,7 +381,6 @@
 		8B04B795212B155B00CDD88A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				8B04B796212B155B00CDD88A /* .gitkeep */,
 				8B04B7A8212B155B00CDD88A /* ModuleTransitionable.swift */,
 			);
 			path = Protocols;
@@ -462,6 +468,7 @@
 			children = (
 				8B9263B821309F030006370E /* RatesAbstractService.swift */,
 				8B9263B621309E270006370E /* RatesService.swift */,
+				8BD36F9A21335D750092415D /* RatesServiceRequests.swift */,
 				8B9263BB21309F2C0006370E /* RatesConverter.swift */,
 			);
 			path = Rates;
@@ -481,6 +488,16 @@
 				8B9263BD2130A6570006370E /* RatesConverterTests.swift */,
 			);
 			path = Rates;
+			sourceTree = "<group>";
+		};
+		8BD36F9721335C410092415D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8BD36F9121335B8B0092415D /* URLRequestConvertible.swift */,
+				8BD36F9321335C030092415D /* HTTPMethod.swift */,
+				8BD36F9821335CC30092415D /* BaseServerError.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		AAA1FF9B67627C5496793622 /* View */ = {
@@ -785,9 +802,14 @@
 				8B270764212DE49700302639 /* Rate.swift in Sources */,
 				8B04B7A9212B155B00CDD88A /* ModuleTransitionable.swift in Sources */,
 				D5412B7A9B18791DF313763A /* RatesModuleConfigurator.swift in Sources */,
+				8BD36F9921335CC30092415D /* BaseServerError.swift in Sources */,
+				8BD36F9B21335D750092415D /* RatesServiceRequests.swift in Sources */,
 				8B9263B921309F030006370E /* RatesAbstractService.swift in Sources */,
+				8BD36F9221335B8B0092415D /* URLRequestConvertible.swift in Sources */,
+				8BD36F9421335C030092415D /* HTTPMethod.swift in Sources */,
 				4F1150270AB6451756611766 /* RatesRouter.swift in Sources */,
 				3F537FE6DAE306B7F139EA80 /* RatesRouterInput.swift in Sources */,
+				8BD36F9021335B180092415D /* RuntimeError.swift in Sources */,
 				8B270704212B4A9D00302639 /* RatesTableViewAdapter.swift in Sources */,
 				8B270768212DE74900302639 /* NumberFormatter.swift in Sources */,
 				8B270772212DF95100302639 /* Closures.swift in Sources */,
