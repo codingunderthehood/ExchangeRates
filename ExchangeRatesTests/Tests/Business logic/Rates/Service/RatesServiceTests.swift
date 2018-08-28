@@ -79,6 +79,7 @@ final class RatesServiceTests: XCTestCase {
                 onError(error)
             }
         }
+
     }
 
     private final class MockMapper: RatesAbstractMapper {

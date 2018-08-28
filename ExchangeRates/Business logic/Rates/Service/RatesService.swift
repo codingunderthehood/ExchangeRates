@@ -34,7 +34,6 @@ final class RatesService: RatesAbstractService {
             }
             do {
                 let rates = try self.mapper.map(data: data, currencyCode: currencyCode)
-                print(rates.count)
                 DispatchQueue.main.async {
                     onCompleted(rates)
                 }
