@@ -26,15 +26,6 @@ final class RatesModuleConfiguratorTests: XCTestCase {
         }
 
         XCTAssertNotNil(presenter.view, "view in RatesPresenter is nil after configuration")
-        XCTAssertNotNil(presenter.router, "router in RatesPresenter is nil after configuration")
-        XCTAssertTrue(presenter.router is RatesRouter, "router is not RatesRouter")
-
-        guard let router: RatesRouter = presenter.router as? RatesRouter else {
-            XCTFail("Cannot assign presenter.router as RatesRouter")
-            return
-        }
-
-        XCTAssertTrue(router.view is RatesViewController, "view in router is not RatesViewController")
     }
 
 }

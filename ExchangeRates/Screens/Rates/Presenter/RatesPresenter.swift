@@ -7,34 +7,6 @@
 
 import Foundation
 
-public extension Double {
-
-    /// SwiftRandom extension
-    public static func random(lower: Double = 0, upper: Double = 100) -> Double {
-        return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
-    }
-
-}
-
-final class RatesMockService: RatesAbstractService {
-
-    private var timer: Timer?
-
-    func getRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: @escaping (Error) -> Void) {
-        self.timer?.invalidate()
-        self.timer = nil
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { _ in
-            onCompleted([
-                Rate(baseCurrency: Currency(code: currencyCode), targetCurrency: Currency(code: "EUR"), value: Double.random(lower: 1.00, upper: 1.15)),
-                Rate(baseCurrency: Currency(code: currencyCode), targetCurrency: Currency(code: "DKK"), value: Double.random(lower: 2.00, upper: 2.11)),
-                Rate(baseCurrency: Currency(code: currencyCode), targetCurrency: Currency(code: "RON"), value: Double.random(lower: 2.5000, upper: 2.8000)),
-                Rate(baseCurrency: Currency(code: currencyCode), targetCurrency: Currency(code: "HUF"), value: Double.random(lower: 1.5000, upper: 1.7000))
-            ])
-        }
-    }
-
-}
-
 final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
     // MARK: - Constants
@@ -46,7 +18,6 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
     // MARK: - Properties
 
     weak var view: RatesViewInput?
-    var router: RatesRouterInput?
     var output: RatesModuleOutput?
     private var currentAmount: Double = 1
     private var currentCurrencyCode: String = Currency.default.code

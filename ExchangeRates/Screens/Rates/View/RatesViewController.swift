@@ -8,7 +8,7 @@
 import UIKit
 import PinLayout
 
-final class RatesViewController: UIViewController, RatesViewInput, ModuleTransitionable {
+final class RatesViewController: UIViewController, RatesViewInput {
 
     // MARK: - Subviews
 

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Think about naming
 struct RuntimeError: LocalizedError {
 
     let message: String

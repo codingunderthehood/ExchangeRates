@@ -28,16 +28,6 @@ final class Currency {
 
 }
 
-// MARK: - Hashable
-
-extension Currency: Hashable {
-
-    var hashValue: Int {
-        return code.hashValue
-    }
-
-}
-
 // MARK: - Equatable
 
 extension Currency: Equatable {

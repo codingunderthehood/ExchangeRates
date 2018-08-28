@@ -25,7 +25,6 @@ final class RatesPresenterTest: XCTestCase {
     override func setUp() {
         super.setUp()
         presenter = RatesPresenter()
-        presenter?.router = MockRouter()
         view = MockViewController()
         presenter?.view = view
         output = MockModuleOutput()
@@ -231,8 +230,6 @@ final class RatesPresenterTest: XCTestCase {
     }
 
     // MARK: - Mocks
-
-    private final class MockRouter: RatesRouterInput {}
 
     private final class MockViewController: RatesViewInput {
 
