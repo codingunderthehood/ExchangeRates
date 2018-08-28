@@ -51,16 +51,6 @@ final class CurrencyBundle {
 
 }
 
-// MARK: - Hashable
-
-extension CurrencyBundle: Hashable {
-
-    var hashValue: Int {
-        return code.hashValue
-    }
-
-}
-
 // MARK: - Equatable
 
 extension CurrencyBundle: Equatable {
