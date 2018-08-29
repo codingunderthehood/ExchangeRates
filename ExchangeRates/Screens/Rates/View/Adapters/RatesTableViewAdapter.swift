@@ -9,6 +9,12 @@ import UIKit
 
 final class RatesTableViewAdapter: NSObject {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let rowHeight: CGFloat = 58
+    }
+
     // MARK: - Properties
 
     private var items: [CurrencyBundle] = []
@@ -23,7 +29,7 @@ final class RatesTableViewAdapter: NSObject {
         self.tableView = tableView
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 58
+        tableView.estimatedRowHeight = Constants.rowHeight
         tableView.register(RatesTableViewCell.self, forCellReuseIdentifier: RatesTableViewCell.reuseIdentifier)
     }
 
@@ -95,6 +101,10 @@ extension RatesTableViewAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         didSelectCurrency?(items[indexPath.row])
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.rowHeight
     }
 
 }

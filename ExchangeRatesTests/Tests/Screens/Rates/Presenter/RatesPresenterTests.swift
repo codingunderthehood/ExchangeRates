@@ -42,7 +42,7 @@ final class RatesPresenterTest: XCTestCase {
     func testThatPresenterPassesDataToView() {
         // given
         let amount: Double = 10
-        let rate = Rate(baseCurrency: Currency(code: "EUR"), targetCurrency: Currency(code: "EUR"), value: 1)
+        let rate = Rate(baseCurrency: Currency.default, targetCurrency: Currency.default, value: 1)
         let expectedCurrency = RatesConverter().convertToCurrency(rate: rate, amount: amount)
         let service = MockRatesService()
         service.responsePolicy = .returnData(
@@ -61,6 +61,28 @@ final class RatesPresenterTest: XCTestCase {
             XCTAssert(true)
         } else {
             XCTFail("Expected \(RatesViewState.data(currencies: [defaultSelectedCurrency, expectedCurrency])), got \(String(describing: view?.lastReceivedState))")
+        }
+    }
+
+    func testThatPresenterNotPassesWrongDataToView() {
+        // given
+        let rate = Rate(baseCurrency: Currency(code: "RANDOMCURRENCY"), targetCurrency: Currency(code: "RANDOMCURRENCY"), value: 1)
+        let service = MockRatesService()
+        service.responsePolicy = .returnData(
+            data: [rate]
+        )
+        presenter?.configure(with: service)
+        let expectation = self.expectation(description: "Configure calling")
+        expectation.expectedFulfillmentCount = 1 // configure with .loading
+        view?.configureExpectation = expectation
+        // when
+        presenter?.loadData()
+        waitForExpectations(timeout: 5, handler: nil)
+        // then
+        if case .loading? = view?.lastReceivedState {
+            XCTAssert(true)
+        } else {
+            XCTFail("Expected \(RatesViewState.loading), got \(String(describing: view?.lastReceivedState))")
         }
     }
 
@@ -116,7 +138,7 @@ final class RatesPresenterTest: XCTestCase {
     func testThatChangingAmountUpdatesCurrencies() {
         // given
         let amount: Double = 10
-        let rate = Rate(baseCurrency: Currency(code: "EUR"), targetCurrency: Currency(code: "EUR"), value: 1)
+        let rate = Rate(baseCurrency: Currency.default, targetCurrency: Currency.default, value: 1)
         let expectedCurrency = RatesConverter().convertToCurrency(rate: rate, amount: 10)
 
         let service = MockRatesService()
@@ -165,14 +187,14 @@ final class RatesPresenterTest: XCTestCase {
         // then
         XCTAssert(service.currentCurrencyCode == currencyCode, "Expected \(currencyCode), got \(service.currentCurrencyCode)")
         XCTAssert(view?.selectWasCalled == true)
-        XCTAssert(service.subscribeOnRatesCallsCount == 1)
+        XCTAssert(service.getRatesCallsCount == 1)
     }
 
     func testThatSelectNewCurrencyCallsForNewRates() {
         // given
-        let expectedCurrencyCode = "NewCurrency"
-        let rate = Rate(baseCurrency: Currency(code: "EUR"), targetCurrency: Currency(code: "EUR"), value: 1)
-        let targetRate = Rate(baseCurrency: Currency(code: "EUR"), targetCurrency: Currency(code: expectedCurrencyCode), value: 1)
+        let expectedCurrency = Currency(code: "NewCurrency")
+        let rate = Rate(baseCurrency: Currency.default, targetCurrency: Currency.default, value: 1)
+        let targetRate = Rate(baseCurrency: expectedCurrency, targetCurrency: expectedCurrency, value: 1)
 
         let service = MockRatesService()
         service.responsePolicy = .returnData(
@@ -186,19 +208,22 @@ final class RatesPresenterTest: XCTestCase {
 
         // when
         presenter?.loadData()
-        presenter?.select(currency: CurrencyBundle(currency: Currency(code: expectedCurrencyCode), value: nil))
-        waitForExpectations(timeout: 5, handler: nil)
+        presenter?.select(currency: CurrencyBundle(currency: Currency(code: expectedCurrency.code), value: nil))
+        service.responsePolicy = .returnData(
+            data: [targetRate, rate]
+        )
+        waitForExpectations(timeout: 2, handler: nil)
 
         // then
-        XCTAssert(service.currentCurrencyCode == expectedCurrencyCode, "Expected \(expectedCurrencyCode), got \(service.currentCurrencyCode)")
+        XCTAssert(service.currentCurrencyCode == expectedCurrency.code, "Expected \(expectedCurrency.code), got \(service.currentCurrencyCode)")
         XCTAssert(view?.selectWasCalled == true)
-        XCTAssert(service.subscribeOnRatesCallsCount == 2)
+        XCTAssert(service.getRatesCallsCount == 2, "Expected \(2), got \(service.getRatesCallsCount)")
     }
 
     func testThatChangingAmountChangesCurrenciesAmount() {
         // given
         let updatingAmount: Double = 9
-        let rate = Rate(baseCurrency: Currency(code: "EUR"), targetCurrency: Currency(code: "EUR"), value: 1)
+        let rate = Rate(baseCurrency: Currency.default, targetCurrency: Currency.default, value: 1)
         let expectedCurrency = RatesConverter().convertToCurrency(rate: rate, amount: updatingAmount)
         let service = MockRatesService()
         service.responsePolicy = .returnData(
@@ -266,10 +291,10 @@ final class RatesPresenterTest: XCTestCase {
 
         var responsePolicy: ResponsePolicy = .returnError(error: NSError(domain: "domain", code: 1, userInfo: nil))
         var currentCurrencyCode: String = ""
-        var subscribeOnRatesCallsCount: Int = 0
+        var getRatesCallsCount: Int = 0
 
         func getRates(currencyCode: String, onCompleted: @escaping ([Rate]) -> Void, onError: @escaping (Error) -> Void) {
-            subscribeOnRatesCallsCount += 1
+            getRatesCallsCount += 1
             self.currentCurrencyCode = currencyCode
             switch responsePolicy {
             case .returnData(let data):

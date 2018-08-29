@@ -49,7 +49,7 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
     }
 
     func change(amount: String) {
-        self.currentAmount = Double(amount) ?? 0
+        self.currentAmount = NumberFormatter.currencyFormatter.number(from: amount)?.doubleValue ?? 0
         // Update view with updated data
         view?.configure(with: .data(currencies: converter.convertToCurrencies(rates: rates, amount: currentAmount)))
     }
@@ -74,6 +74,10 @@ final class RatesPresenter: RatesViewOutput, RatesModuleInput {
 
         service?.getRates(currencyCode: currentCurrencyCode, onCompleted: { [weak self] rates in
             guard let `self` = self else {
+                return
+            }
+            guard rates.first?.baseCurrency.code == self.currentCurrencyCode else {
+                newCall()
                 return
             }
             // Add selected currency as first rate to pass to a view
